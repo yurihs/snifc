@@ -1,15 +1,14 @@
 from pathlib import Path
 from PyQt5 import Qt, QtCore, QtWidgets, QtChart, uic
-from snifc.utils import get_tshark_interface_names
+from snifc.utils import get_tshark_interface_names, get_project_dir
 
 class DialogoCapturar(QtWidgets.QDialog):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        diretorio_gui = Path(__file__).parent
         # Carregar a interface do arquivo exportado pelo Qt Designer
-        uic.loadUi(diretorio_gui / 'dialogo_capturar.ui', self)
+        uic.loadUi(get_project_dir() / 'gui/dialogo_capturar.ui', self)
 
         self.buttonGroup = Qt.QButtonGroup(self)
 

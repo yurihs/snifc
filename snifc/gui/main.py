@@ -33,9 +33,8 @@ class SnifcWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
-        diretorio_gui = Path(__file__).parent
         # Carregar a interface do arquivo exportado pelo Qt Designer
-        uic.loadUi(diretorio_gui / 'main.ui', self)
+        uic.loadUi(utils.get_project_dir() / 'gui/main.ui', self)
 
         self.dialogo_capturar = DialogoCapturar(self)
 
