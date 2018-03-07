@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Snifc</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableWidget" name="tabelaCaptura">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QtCharts::QChartView" name="graficoNumPacotes"/>
+      </item>
+      <item>
+       <widget class="QtCharts::QChartView" name="grafico2"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Ar&amp;quivo</string>
+    </property>
+    <addaction name="actionAbrir"/>
+   </widget>
+   <widget class="QMenu" name="menuCapturar">
+    <property name="title">
+     <string>&amp;Capturas</string>
+    </property>
+    <widget class="QMenu" name="menuIniciarCaptura">
+     <property name="title">
+      <string>&amp;Iniciar captura</string>
+     </property>
+    </widget>
+    <addaction name="menuIniciarCaptura"/>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuCapturar"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>&amp;Abrir</string>
+   </property>
+  </action>
+  <action name="actionInterface">
+   <property name="text">
+    <string>Interface</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtCharts::QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">QtCharts/QChartView&gt;
+#include &lt;QtCharts/chartsnamespace.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
