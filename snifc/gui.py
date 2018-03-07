@@ -74,7 +74,7 @@ class SnifcWindow(QtWidgets.QMainWindow):
             actions.append(action)
 
         self.menuIniciarCaptura.clear()
-        self.menuIniciarCaptura.addActions(self._construir_acoes_de_captura())
+        self.menuIniciarCaptura.addActions(actions)
 
     def _init_tabela_de_captura(self):
         """
