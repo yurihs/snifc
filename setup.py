@@ -19,7 +19,6 @@ setup(
     install_requires=requirements,
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
-    license="MIT",
     zip_safe=False,
     classifiers=[
         'Programming Language :: Python :: 3'
