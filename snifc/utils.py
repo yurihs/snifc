@@ -6,7 +6,7 @@ import os
 from pyshark.tshark.tshark import get_process_path, check_output
 from typing import List
 
-def get_tshark_interface_names(tshark_path=None: str) -> List[str]:
+def get_tshark_interface_names(tshark_path: str = None) -> List[str]:
     """
     Retorna uma lista dos nomes de interface de rede.
     """
