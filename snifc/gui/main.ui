@@ -59,12 +59,8 @@
     <property name="title">
      <string>&amp;Capturas</string>
     </property>
-    <widget class="QMenu" name="menuIniciarCaptura">
-     <property name="title">
-      <string>&amp;Iniciar captura</string>
-     </property>
-    </widget>
-    <addaction name="menuIniciarCaptura"/>
+    <addaction name="actionIniciarCaptura"/>
+    <addaction name="actionInterromperCaptura"/>
    </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuCapturar"/>
@@ -78,6 +74,19 @@
   <action name="actionInterface">
    <property name="text">
     <string>Interface</string>
+   </property>
+  </action>
+  <action name="actionIniciarCaptura">
+   <property name="text">
+    <string>Iniciar captura</string>
+   </property>
+  </action>
+  <action name="actionInterromperCaptura">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Interromper captura</string>
    </property>
   </action>
  </widget>
