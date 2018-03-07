@@ -32,9 +32,9 @@ class SnifcWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
-        diretorio_projeto = Path(__file__).parent
+        diretorio_gui = Path(__file__).parent
         # Carregar a interface do arquivo exportado pelo Qt Designer
-        uic.loadUi(diretorio_projeto / 'snifc.ui', self)
+        uic.loadUi(diretorio_gui / 'main.ui', self)
 
         # Inicialização dos componentes da interface
         self._init_menu_arquivo()
@@ -160,9 +160,3 @@ class SnifcWindow(QtWidgets.QMainWindow):
             chart.axisX().setRange(0, curve.count()-1)
             chart.axisY().setRange(0, max(max_y, float(pacote[0])))
 
-
-if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
-    window = SnifcWindow()
-    window.show()
-    sys.exit(app.exec_())

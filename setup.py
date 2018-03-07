@@ -22,5 +22,10 @@ setup(
     zip_safe=False,
     classifiers=[
         'Programming Language :: Python :: 3'
-    ]
+    ],
+    entry_points={
+        'console_scripts': [
+            'snifc=snifc.gui:run'
+        ]
+    }
 )
