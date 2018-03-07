@@ -3,6 +3,9 @@ from setuptools import setup
 version = "0.0.1"
 
 requirements = [
+    'pyshark',
+    'PyQt5',
+    'PyQtChart'
 ]
 
 setup(
