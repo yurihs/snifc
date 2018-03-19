@@ -8,7 +8,13 @@ Um sniffer de pacotes com uma interface gráfica, construído usando o
 ## Instalação
 
 
-O programa funciona somente com o Python 3.
+**O programa funciona somente com o Python 3.**
+
+Necessita também do ```tshark```, usado pelo pyshark para capturar os pacotes.
+Num sistema Ubuntu, utilize o apt para instalá-lo.
+~~~
+sudo apt install tshark
+~~~
 
 Crie um virtualenv.
 
