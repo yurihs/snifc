@@ -67,7 +67,7 @@ class SnifcWindow(QtWidgets.QMainWindow):
         """
         Inicializa a tabela que mostra os pacotes da captura.
         """
-        cabecalhos = ['Tempo', 'IP de origem', 'IP de destino', 'Domínio']
+        cabecalhos = ['Tempo', 'IP de origem', 'IP de destino', 'Protocolos', 'Tamanho']
         self.tabelaCaptura.setColumnCount(len(cabecalhos))
         self.tabelaCaptura.setHorizontalHeaderLabels(cabecalhos)
 
@@ -169,16 +169,15 @@ class SnifcWindow(QtWidgets.QMainWindow):
             # Ainda não há nenhuma informação no gráfico.
             # Adicionar uma nova série de dados.
             curve = QtChart.QLineSeries()
-            curve.append(QtCore.QPointF(curve.count(), float(pacote[0])))
+            curve.append(QtCore.QPointF(curve.count(), float(pacote[-1])))
             chart.addSeries(curve)
             chart.createDefaultAxes()
         else:
             # Anexar o novo pacote na série existente.
             curve = series[0]
-            curve.append(QtCore.QPointF(curve.count(), float(pacote[0])))
+            curve.append(QtCore.QPointF(curve.count(), float(pacote[-1])))
 
             # Reajustar a escala dos eixos para mostrar todos os pontos.
             max_y = max(p.y() for p in curve.pointsVector())
             chart.axisX().setRange(0, curve.count()-1)
-            chart.axisY().setRange(0, max(max_y, float(pacote[0])))
-
+            chart.axisY().setRange(0, max(max_y, float(pacote[-1]))*2)
